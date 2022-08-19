@@ -11,12 +11,8 @@ class Publication{
     public:
     Publication(string title, string author, int year):
     title(title), author(author), year(year){ }
-    Publication()
-    {
-        title = "No title";
-        author = "No Author";
-        year = 0;
-    }
+    Publication(): Publication("No title", "No Author", 0){}
+
     void print(){
         cout << "Title : " << this->title << endl;
         cout << "Author : " << this->author << endl;
@@ -32,15 +28,7 @@ class Book: public Publication{
     public:
     Book(string title, string author, int year, string publisher, int num_pages, int ISBN): 
     Publication(title, author, year),num_pages(num_pages), ISBN(ISBN),publisher(publisher){}
-    Book()
-    {
-            title = "No title";
-            author = "No Author";
-            year = 0;
-            publisher = "";
-            num_pages = 0;
-            ISBN = 0;
-    }
+    Book(): Book("No title", "No Author", 0, "", 0, 0){}
 
     void print(bool short_print){
         if(short_print){
